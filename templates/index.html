@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>Social Media Captions</title>
+</head>
+
+<body>
+    <center>
+        <h1>Social Media Captions</h1>
+    </center>
+    <div>
+        <form action="/predict" method="POST">
+            <center><label for="pic_url">Enter the local file link</label></center>
+            <center><textarea name="pic_url" rows="10" cols="30" placeholder="Choose a link to test for:" required="required"></textarea></center>
+            <br>
+            <center><input type="submit" value="Submit"></center>
+
+        </form>
+        <center>
+            <font color='red'>
+                <h1>{{ prediction_text }}</h1>
+            </font>
+        </center>
+    </div>
+    <form method="post" action="/predict" enctype="multipart/form-data">
+        <div class="custom-file overflow-hidden rounded-pill mb-5">
+            <input id="pic" type="file" accept=".jpg, .png" name="pic" class="custom-file-input rounded-pill" required>
+            <label for="pic" id="fLabel" class="custom-file-label rounded-pill">Choose file</label>
+            <!-- <input id="pic" type="file" accept=".jpg, .png, .jpeg" name="pic" class="custom-file-input rounded-pill" required> 
+            <label for="pic" id="fLabel" class="custom-file-label rounded-pill">Choose file</label> -->
+        </div>
+        <input type="submit" id="submit" class="btn btn-primary btn-block">
+    </form>
+</body>
+
+</html>
